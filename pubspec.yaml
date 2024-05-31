@@ -1,0 +1,63 @@
+name: whatif_project
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+
+  cupertino_icons: ^1.0.6
+  flutter_bloc: ^8.1.5
+  bloc: ^8.1.4
+  google_fonts: ^6.2.1
+  dio: ^5.4.3
+  google_generative_ai: ^0.3.0
+  dartz: ^0.10.1
+  cloud_firestore: ^4.16.1
+  firebase_core: ^2.29.0
+  firebase_auth: ^4.19.1
+  shared_preferences: ^2.2.3
+  carousel_slider: ^4.2.1
+  screenshot: ^2.3.0
+  permission_handler: ^11.3.1
+  image_gallery_saver: ^2.0.3
+  flutter_image: ^4.1.11
+  flutter_cache_manager: ^3.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+  flutter_lints: ^3.0.0
+
+
+flutter:
+
+
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/background.png
+
+  fonts:
+    - family: Jersey
+      fonts:
+        - asset: assets/fonts/Jersey10-Regular.ttf
+    - family: Handjet
+      fonts:
+        - asset: assets/fonts/Handjet/Handjet-Medium.ttf
+
+    - family: Marhey
+      fonts:
+        - asset: assets/fonts/Marhey/Marhey-Regular.ttf

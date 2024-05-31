@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "264958782482",
+    "project_id": "what-if-c1f30",
+    "storage_bucket": "what-if-c1f30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264958782482:android:189ed6246bbfd67241bccb",
+        "android_client_info": {
+          "package_name": "com.example.whatif_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAwpQ2438zHavCWZLkGDsiSRHiEPwjW1M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
