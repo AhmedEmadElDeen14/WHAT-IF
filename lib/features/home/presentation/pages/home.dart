@@ -8,30 +8,44 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.deepPurple,
-      body: Stack(
-        children: [
-          const Center(
-            child: Text(
-              "WHAT IF?!",
-              style: TextStyle(
-                  fontFamily: 'Jersey', color: Colors.white, fontSize: 70),
-            ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/sky-black-background.jpg"),
+            fit: BoxFit.fill,
           ),
-          Container(
-            margin: const EdgeInsets.symmetric(
-              vertical: 50
+        ),
+        child: Stack(
+          children: [
+            const Center(
+              child: Text(
+                "WHAT IF?!",
+                style: TextStyle(
+                  fontFamily: 'Jersey',
+                  color: Color(0xfff4d23f),
+                  fontSize: 90,
+                ),
+              ),
             ),
-            alignment: Alignment.center,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                HomeButton(title: "Let's Play",nav: true,),
-                HomeButton(title: "Info",nav: false,),
-              ],
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 50),
+              alignment: Alignment.center,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  HomeButton(
+                    title: "Let's Play",
+                    nav: true,
+                  ),
+                  HomeButton(
+                    title: "Info",
+                    nav: false,
+                  ),
+                ],
+              ),
             ),
-          ),
-
-        ],
+          ],
+        ),
       ),
     );
   }

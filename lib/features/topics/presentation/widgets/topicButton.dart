@@ -24,21 +24,28 @@ class TopicButton extends StatelessWidget {
             arguments: topicModel);
       },
       child: Container(
-        width: 150,
-        height: 150,
-        decoration: BoxDecoration(
-          color: Colors.green,
-          shape: BoxShape.circle,
-        ),
+        // padding: EdgeInsets.symmetric(vertical: 15),
         child: Center(
-          child: Text(
-            title,
-            style: TextStyle(
-              fontFamily: 'Jersey',
-              color: Colors.white,
-              fontSize: 30,
-            ),
-            textAlign: TextAlign.center,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              title == "Ac Milan"
+                  ? Icon(
+                      Icons.play_arrow,
+                      color: Colors.amber,
+                      size: 25,
+                    )
+                  : SizedBox(),
+              Text(
+                title,
+                style: TextStyle(
+                  fontFamily: 'Jersey',
+                  color: Colors.white,
+                  fontSize: 40,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
           ),
         ),
       ),

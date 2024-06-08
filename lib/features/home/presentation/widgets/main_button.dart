@@ -6,7 +6,7 @@ class HomeButton extends StatelessWidget {
   String title;
   bool nav;
 
-  HomeButton({super.key,required this.title,required this.nav});
+  HomeButton({super.key, required this.title, required this.nav});
 
   @override
   Widget build(BuildContext context) {
@@ -14,25 +14,26 @@ class HomeButton extends StatelessWidget {
       margin: EdgeInsets.all(10),
       child: InkWell(
         onTap: () {
-          if(nav){
+          if (nav) {
             Navigator.pushNamed(context, RoutesName.category);
-          }else{
+          } else {
             Navigator.pushNamed(context, RoutesName.info);
           }
-
         },
         child: Container(
           padding: EdgeInsets.all(8),
-
           width: MediaQuery.of(context).size.width * .9,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-              color: Colors.orangeAccent,
+              color: Color(0xffF97316),
               borderRadius: BorderRadius.circular(15)),
           child: Text(
             title,
             style: TextStyle(
-                fontFamily: 'Jersey', color: Colors.white, fontSize: 35),
+              fontFamily: 'Jersey',
+              color: Color(0xffE5E7EB),
+              fontSize: 35,
+            ),
           ),
         ),
       ),

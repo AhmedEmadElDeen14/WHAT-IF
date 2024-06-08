@@ -32,6 +32,7 @@ dependencies:
   image_gallery_saver: ^2.0.3
   flutter_image: ^4.1.11
   flutter_cache_manager: ^3.3.1
+  flutter_gemini: ^2.0.4
 
 dev_dependencies:
   flutter_test:

@@ -12,48 +12,55 @@ class TopicsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.deepPurple,
-      appBar: AppBar(
-        title: Text(
-          categoryModel.categoryTitle,
-          style: TextStyle(
-            fontFamily: 'Jersey',
-            fontSize: 35,
-            color: Colors.white,
-          ),
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage("assets/images/sky-black-background.jpg"),
+          fit: BoxFit.fill,
         ),
-        centerTitle: true,
-        backgroundColor: Colors.transparent,
-        iconTheme: IconThemeData(color: Colors.white),
       ),
-      body: categoryModel.topics == null || categoryModel.topics.isEmpty
-          ? Center(
-              child: Text(
-              "Coming Soon...",
-              style: TextStyle(
-                  fontFamily: 'Jersey', fontSize: 55, color: Colors.white),
-            ))
-          : Container(
-              padding: EdgeInsets.all(15),
-              child: GridView.builder(
-                shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount:
-                      2, // Set the number of columns in the inner grid
-                  crossAxisSpacing: 10.0, // Set the spacing between columns
-                  mainAxisSpacing: 10.0, // Set the spacing between rows
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          title: Text(
+            categoryModel.categoryTitle,
+            style: const TextStyle(
+              fontFamily: 'Jersey',
+              fontSize: 35,
+              color: Color(0xfff4d23f),
+            ),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.transparent,
+          iconTheme: const IconThemeData(color: Colors.white),
+        ),
+        body: categoryModel.topics == null || categoryModel.topics.isEmpty
+            ? const Center(
+                child: Text(
+                  "Coming Soon...",
+                  style: TextStyle(
+                      fontFamily: 'Jersey', fontSize: 55, color: Colors.white),
                 ),
-                itemCount: categoryModel.topics.length,
-                itemBuilder: (context, index) {
-                  TopicModel topic = categoryModel.topics[index];
-                  return TopicButton(
-                    title: topic.topicTitle,
-                    topicModel: categoryModel.topics[index],
-                    topicId: topic.topicId,
-                  );
-                },
-              )),
+              )
+            : Container(
+                padding: const EdgeInsets.all(15),
+                child: ListView.builder(
+                  itemCount: categoryModel.topics.length,
+                  itemBuilder: (context, index) {
+                    TopicModel topic = categoryModel.topics[index];
+                    return Row(
+                      children: [
+                        TopicButton(
+                          title: topic.topicTitle,
+                          topicModel: categoryModel.topics[index],
+                          topicId: topic.topicId,
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ),
+      ),
     );
   }
 }

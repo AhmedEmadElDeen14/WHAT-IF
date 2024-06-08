@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:whatif_project/config/routes/routes.dart';
 import 'package:whatif_project/features/categories/data/models/category_model.dart';
-import 'package:whatif_project/firebase_functions.dart';
 
+// ignore: must_be_immutable
 class CategoryButton extends StatelessWidget {
   String title;
   String categoryId;
@@ -18,27 +18,30 @@ class CategoryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () async {
-        print(categoryModel.categoryTitle);
         Navigator.pushNamed(context, RoutesName.topics,
             arguments: categoryModel);
       },
-      child: Container(
-        width: 150,
-        height: 150,
-        decoration: BoxDecoration(
-          color: Colors.green,
-          shape: BoxShape.circle,
-        ),
-        child: Center(
-          child: Text(
-            title,
-            style: TextStyle(
-              fontFamily: 'Jersey',
-              color: Colors.white,
-              fontSize: 30,
+      child: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            title == "Sport"
+                ? const Icon(
+                    Icons.play_arrow,
+                    color: Colors.amber,
+                    size: 25,
+                  )
+                : const SizedBox(),
+            Text(
+              title,
+              style: const TextStyle(
+                fontFamily: 'Jersey',
+                color: Colors.white,
+                fontSize: 30,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
-          ),
+          ],
         ),
       ),
     );
