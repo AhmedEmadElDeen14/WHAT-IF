@@ -55,7 +55,6 @@ class _CategoriesScreenState extends State<CategoriesScreen>
           padding: const EdgeInsets.all(15),
           child: FutureBuilder<List<CategoryModel>>(
             future: FirebaseFunctions.getAllCategories(),
-            // Fetch categories from Firebase
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return Center(

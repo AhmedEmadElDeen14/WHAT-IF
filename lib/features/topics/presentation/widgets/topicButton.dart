@@ -24,18 +24,10 @@ class TopicButton extends StatelessWidget {
             arguments: topicModel);
       },
       child: Container(
-        // padding: EdgeInsets.symmetric(vertical: 15),
         child: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              title == "Ac Milan"
-                  ? Icon(
-                      Icons.play_arrow,
-                      color: Colors.amber,
-                      size: 25,
-                    )
-                  : SizedBox(),
               Text(
                 title,
                 style: TextStyle(
